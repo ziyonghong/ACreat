@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!--  <style type="text/css">
+  .anniu{
+   
+    /*margin-left:440px;*/
+      left: 160px;
+     position: relative;
+     background:url("img/button0.png");
+</style> -->
+    
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Js -->
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <script src="js/vendor/jquery-1.10.2.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/min/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+<script type="text/javascript">
+    function send(){
+
+      $.ajax({
+
+            url : 'http://192.168.43.1',
+
+            type : 'post',
+
+            data :JSON.stringify(submitArr),
+
+            dataType: 'json',
+
+            //processData: false,   用FormData传fd时需有这两项
+
+            //contentType: false,
+
+            success : function(data){
+
+                console.log('返回的数据：'+JSON.stringify(data))
+
+          　} 
+
+        })
+
+    }
+
+    
+
+    var oBtn = document.getElementsByTagName('button')[0];
+
+    oBtn.onclick=function(){
+
+        if(!input.files.length){
+
+          return alert('请先选择文件');
+
+        }
+
+      send();
+
+    }
+
+</script>
+
+      <script type="text/javascript">
+         function ProcessFile(e) {
+              var file = document.getElementById('file').files[0];
+              if (file) {
+                  var reader = new FileReader();
+                  reader.onload = function (event) {
+                      var txt = event.target.result;
+
+                      var img = document.createElement("img");
+                      img.src = txt;//将图片base64字符串赋值给img的src
+                      // console.log(txt);
+                      img.width=400;
+                      img.height=400;
+                      var oImg = document.getElementById("result").getElementsByTagName('img');
+                      if(oImg.length == 0){
+                       // alert('未定义');
+                        document.getElementById("result").appendChild(img);
+                      }
+                      else
+                        oImg[0].src = img.src;
+                  };  
+              }
+              reader.readAsDataURL(file);
+          }
+
+          function contentLoaded() {
+              document.getElementById('file').addEventListener('change',
+                  ProcessFile, false);
+          }
+
+          window.addEventListener("DOMContentLoaded", contentLoaded, false);
+
+          // function ProcessFile(e) {
+          //     var file = document.getElementById('file').files[0];
+          //     if (file) {
+          //         var reader = new FileReader();
+          //         reader.onload = function (event) {
+          //             var txt = event.target.result;
+
+          //             var img = document.createElement("img");
+          //             img.src = txt;//将图片base64字符串赋值给img的src
+          //             // console.log(txt);
+          //             document.getElementById("result").appendChild(img);
+          //         };
+          //     }
+          //     reader.readAsDataURL(file);
+          // }
+
+          // function contentLoaded() {
+          //     document.getElementById('file').addEventListener('change',
+          //         ProcessFile, false);
+          // }
+
+          // window.addEventListener("DOMContentLoaded", contentLoaded, false);
+      </script>
+  </head>
+
+  <body>
+
+
+
+
+    <!-- Header Start -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                            <!-- header Nav Start -->
+                    <nav class="navbar navbar-default">
+                      <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                          </button>
+                          <a class="navbar-brand" href="index.html">
+                              <img src="img/logo.png" alt="Logo">
+                          </a>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                          <ul class="nav navbar-nav navbar-right">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="work.html">Work</a></li>
+                           
+                            <li><a href="contact.html">Contact</a></li>
+                            </li>
+                          </ul>
+                        </div><!-- /.navbar-collapse -->
+                      </div><!-- /.container-fluid -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header><!-- header close -->
+    
+        <!-- Slider Start -->
+    <section id="global-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h1>Just Do It</h1>
+                        <p>My imagination is a monk temple, I was a monk in the temple.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- Portfolio Start -->
+        <!--
+    <section id="portfolio-work">
+        <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="block">
+                  <div class="portfolio-menu">
+                    <ul>
+                        <!-- <li class="filter" data-filter="all">Everything</li>
+                        <li class="filter" data-filter=".Branding">Branding</li>
+                        <li class="filter" data-filter=".Websites">Websites</li>
+                        <li class="filter" data-filter=".Graphic">Graphic</li>
+                        <li class="filter" data-filter=".design">design</li>
+                        <li class="filter" data-filter=".Video">Video</li>
+                        -->
+                        <!--
+                    </ul>
+                  </div>
+                  <div class="portfolio-contant">
+                    <ul id="portfolio-contant-active">
+                        <li class="mix Branding">
+                          <a href="#">
+                            <img src="img/portfolio/work1.jpg" alt="">
+                            <div class="overly">
+                              <div class="position-center">
+                                <h2>Tesla Motors</h2>
+                                <p>Labore et dolore magna aliqua. Ut enim ad </p>
+                                
+                              </div>
+                            </div>
+                          </a>
+                      </li>
+                      <li class="mix Websites">
+                        <a href="#">
+                          <img src="img/portfolio/work2.jpg" alt="">
+                          <div class="overly">
+                            <div class="position-center">
+                              <h2>Tesla Motors</h2>
+                              <p>Labore et dolore magna aliqua. Ut enim ad </p>
+                              
+                            </div>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="mix Graphic">
+                        <a href="#">
+                          <img src="img/portfolio/work3.jpg" alt="">
+                          <div class="overly">
+                            <div class="position-center">
+                              <h2>Tesla Motors</h2>
+                              <p>Labore et dolore magna aliqua. Ut enim ad </p>
+                              
+                            </div>
+                          </div>
+                          
+                        </a>
+                      </li>
+                      <li class="mix design">
+                        <a href="#">
+                          <img src="img/portfolio/work4.jpg" alt="">
+                          <div class="overly">
+                            <div class="position-center">
+                              <h2>Tesla Motors</h2>
+                              <p>Labore et dolore magna aliqua. Ut enim ad </p>
+                              
+                            </div>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="mix Video">
+                        <a href="#">
+                          <img src="img/portfolio/work5.jpg" alt="">
+                          <div class="overly">
+                            <div class="position-center">
+                              <h2>Tesla Motors</h2>
+                              <p>Labore et dolore magna aliqua. Ut enim ad </p>
+                              
+                            </div>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="mix Graphic">
+                        <a href="#">
+                          <img src="img/portfolio/work6.jpg" alt="">
+                          <div class="overly">
+                            <div class="position-center">
+                              <h2>Tesla Motors</h2>
+                              <p>Labore et dolore magna aliqua. Ut enim ad </p>
+                              
+                            </div>
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Clients Logo Section Start -->
+    <!--
+    <section id="clients-logo-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="block">
+              <div id="clients-logo" class="owl-carousel">
+                <div class="clients-logo-img">
+                  <img src="img/clients/clients-logo1.png" alt="Features">
+                </div>
+                <div class="clients-logo-img">
+                  <img src="img/clients/clients-logo2.png" alt="Features">
+                </div>
+                <div class="clients-logo-img">
+                  <img src="img/clients/clients-logo3.png" alt="Features">
+                </div>
+                <div class="clients-logo-img">
+                  <img src="img/clients/clients-logo4.png" alt="Features">
+                </div>
+                <div class="clients-logo-img">
+                  <img src="img/clients/clients-logo5.png" alt="Features">
+                </div>
+                <div class="clients-logo-img">
+                  <img src="img/clients/clients-logo3.png" alt="Features">
+                </div>
+                <div class="clients-logo-img">
+                  <img src="img/clients/clients-logo2.png" alt="Features">
+                </div>
+                <div class="clients-logo-img">
+                  <img src="img/clients/clients-logo5.png" alt="Features">
+                </div>
+                <div class="clients-logo-img">
+                  <img src="img/clients/clients-logo1.png" alt="Features">
+                </div>
+                <div class="clients-logo-img">
+                  <img src="img/clients/clients-logo4.png" alt="Features">
+                </div>
+                <div class="clients-logo-img">
+                  <img src="img/clients/clients-logo5.png" alt="Features">
+                </div>
+                <div class="clients-logo-img">
+                  <img src="img/clients/clients-logo3.png" alt="Features">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  <!--新加入的图片上传-->
+<!-- <table>
+<tr>
+<td style="width:100%;height:14px;font-size:14px;border:0"> 
+</td>
+</tr>
+</table>
+<table>
+<tr>
+<td style="width:100%;height:14px;font-size:14px;border:0"> 
+</td>
+</tr>
+</table> -->
+
+<table>
+<tr>
+<td style="width:100%;height:14px;font-size:14px;border:0"> 
+</td>
+</tr>
+</table><table>
+<tr>
+<td style="width:100%;height:14px;font-size:14px;border:0"> 
+</td>
+</tr>
+</table><table>
+<tr>
+<td style="width:100%;height:14px;font-size:14px;border:0"> 
+</td>
+</tr>
+</table><table>
+<tr>
+<td style="width:100%;height:14px;font-size:14px;border:0"> 
+</td>
+</tr>
+</table>
+<table>
+<tr>
+<td style="width:100%;height:14px;font-size:14px;border:0"> 
+</td>
+</tr>
+</table>
+</table> <table>
+<tr>
+<td style="width:100%;height:14px;font-size:14px;border:0"> 
+</td>
+</tr>
+</table> 
+<!-- <div class="container"> 
+   <!--  <display:inline-block>
+    <label>请上传一个图像文件：</label> 
+    <input type="file" name="file" id="file_more1" value="" accept="image/jpeg,image/png,image/jpg,image/gif" > -->  
+    <!-- <label>请上传一个图像文件：</label> 
+    <input name="evidence" onchange="uploadImg(this,'preview')" type="file" value="" accept="image/jpeg,image/png,image/jpg,image/gif">
+    <input type="file" onchange="previewFile()"  value="" accept="image/jpeg,image/png,image/jpg,image/gif">
+    <img src="" height="200" alt="Image preview..."> -->
+
+   
+  <!-- </div> --> 
+    <!--<input type="file" id="file_input" multiple/>   -->
+<!-- </div>    -->
+<!-- <table>
+<tr>
+<td style="width:100%;height:14px;font-size:14px;border:0"> 
+</td>
+</tr>
+</table> --><!-- <table>
+<tr>
+<td style="width:100%;height:14px;font-size:14px;border:0"> 
+</td>
+</tr>
+</table> -->
+<table>
+<tr>
+<td style="width:100%;height:14px;font-size:14px;border:0"> 
+</td>
+</tr>
+</table><table>
+<tr>
+<td style="width:100%;height:14px;font-size:14px;border:0"> 
+</td>
+</tr>
+</table>
+<div class="container">
+    <input name="file" onchange="uploadImg(this,'preview')" id="file" type="file" value="" accept="image/jpeg,image/png,image/jpg,image/gif">
+    <div id="result"></div> <!--此处接受上传的图片-->
+    <span class="dui" id="imgOrder_dui" style="display: inline-block;"></span>
+  </div>
+  <div class="container">
+      <img src="img/noe.jpg" alt="天才创造的成品"  width="400" height="300" style="display: inline-block;" />
+      </div>
+
+      <!-- <input type="button" name="transfer" align=""> -->
+     <!-- input name="" type="button" style=" width:10px; height:10px; border:0; background:url(img/button0.png) no-repeat left top" /> -->
+    <form id="form1" name="form1" method="post" action="index.html">
+  <input name="submit" type="image" value="ee" src="img/button0.png"  onchange="ajaxFileUpload()" />
+</form>
+  <table>
+<tr>
+<td style="width:100%;height:14px;font-size:14px;border:0"> 
+</td>
+</tr>
+</table> 
+<table>
+<tr>
+<td style="width:100%;height:14px;font-size:14px;border:0"> 
+</td>
+</tr>
+</table>
+<table>
+<tr>
+<td style="width:100%;height:14px;font-size:14px;border:0"> 
+</td>
+</tr>
+</table><table>
+<tr>
+<td style="width:100%;height:14px;font-size:14px;border:0"> 
+</td>
+</tr>
+</table><table>
+<tr>
+<td style="width:100%;height:14px;font-size:14px;border:0"> 
+</td>
+</tr>
+</table>
+<table>
+<tr>
+<td style="width:100%;height:14px;font-size:14px;border:0"> 
+</td>
+</tr>
+</table><table>
+<tr>
+<td style="width:100%;height:14px;font-size:14px;border:0"> 
+</td>
+</tr>
+</table> 
+ <table>
+<tr>
+<td style="width:100%;height:14px;font-size:14px;border:0"> 
+</td>
+</tr>
+</table><table>
+<tr>
+<td style="width:100%;height:14px;font-size:14px;border:0"> 
+</td>
+</tr>
+</table> 
+
+<!-- Call to action Start -->
+    <section id="call-to-action">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="block">
+              <h2>May you always be naive and love life</h2>
+              <p>The absurdity of my preference for writing poetry is better than the absurdity of not writing poet.</p>
+              <a class="btn btn-default btn-call-to-action" href="#" >Return to the top</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer Start -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                  <div class="footer-manu">
+                    <ul>
+                      <li><a href="#">About Us</a></li>
+                      <li><a href="#">Contact us</a></li>
+                      <li><a href="#">How it works</a></li>
+                    </ul>
+                  </div>
+                  <p>Copyright &copy; 2018.Company name All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+        
+    </body>
+</html>
